@@ -1,6 +1,7 @@
 <template>
   <div>
 <p>{{this.test}}</p>
+<p>测试一下提交</p>
 <button @click="back">返回</button>
   </div>
 </template>
