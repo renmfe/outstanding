@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
+    <p>6666</p>
   </div>
 </template>
 

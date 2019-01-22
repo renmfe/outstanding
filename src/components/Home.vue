@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+<img src="../img/logo.png" alt="">
+<img src="../img/test.png" alt="">
+
     <button @click="jump">{{msg}}</button>
   </div>
 </template>
