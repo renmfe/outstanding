@@ -17,4 +17,5 @@ target/
 *.log
 *.lnk
 node_modules/
+dist/
 .eclipse/
