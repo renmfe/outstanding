@@ -25,6 +25,8 @@ export default {
   methods:{
 jump(){
 alert(this.test)
+// alert(1,...[2,3,4],5)
+
 if(this.test===true){
 this.$store.commit('List/setTest',false)
 }else{
