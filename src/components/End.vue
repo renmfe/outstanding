@@ -5,6 +5,7 @@
           {{item.id}}&&&&&&{{item.title}}
       </li>
       <button @click="$emit('testFun',1)">按钮</button>
+      
       </div>
 </template>
 <script>
@@ -15,7 +16,18 @@ export default {
     testData:"测试数据"
   }),
   props:{
-    message:Array
+    level: Number,
+    // {
+      // type: Number,
+    //   required: true
+    // },
+    message:Array,
+  },
+  render:function (createElement) {
+    return createElement(
+      'h' + this.level,   // 标签名称
+      this.$slots.default // 子元素数组
+    )
   },
   methods:{
     show(item){  
