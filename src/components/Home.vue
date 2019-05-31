@@ -20,6 +20,7 @@ import axios from "axios";
 import qs from "qs";
 import End from "@/components/End";
 import House from "@/components/House";
+import Decrypt from '../utils/aes.js'
 
 export default {
   name: "Home",
@@ -46,6 +47,7 @@ export default {
     console.log(this.$el.id);
   },
   created() {
+    alert(Decrypt);
       this.getList();
     // let params={
     //   id:"666",
