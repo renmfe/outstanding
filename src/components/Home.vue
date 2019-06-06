@@ -47,7 +47,7 @@ export default {
     console.log(this.$el.id);
   },
   created() {
-    alert(Decrypt);
+    // alert(Decrypt);
       this.getList();
     // let params={
     //   id:"666",
