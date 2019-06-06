@@ -77,9 +77,9 @@ export default {
   methods: {
     getList(){
          let that = this;
-    // axios.get('https://localhost:18081/123')
-    axios
-      .get("https://106.12.27.117:18081/123")
+    axios.get('https://localhost:18081/123')
+    // axios
+    //   .get("https://106.12.27.117:18081/123")
       .then(function(response) {
         console.log('123'+JSON.stringify(response));
         that.tabs = response.data;
@@ -93,8 +93,8 @@ export default {
       // alert(this.inputName);
       let that = this;
       axios({
-      // url: "https://localhost:18081/456",
-      url: "https://106.12.27.117:18081/456",
+      url: "https://localhost:18081/456",
+      // url: "https://106.12.27.117:18081/456",
       method: "post",
       data: qs.stringify(
         {
