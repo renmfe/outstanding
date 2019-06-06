@@ -3,8 +3,7 @@
     <!-- <house/> -->
      <input type="text" style="height:50px;width:200px;background-color:white" v-model="inputName">
      <button @click="insert">插入数据库</button>
-    <end :message="message" v-on:testFun="getEmit" :level="level">hello world</end>
-
+    <!-- <end :message="message" v-on:testFun="getEmit" :level="level">hello world</end> -->
     <button @click="jump">{{msg}}</button>
     <p v-for="tab in tabs" :key="tab.id">
       编号{{tab.id}}
@@ -76,25 +75,30 @@ export default {
   },
   methods: {
     getList(){
-         let that = this;
-    axios.get('https://localhost:18081/123')
+      console.log('去查卡列表');
+      let that = this;
+    axios.get('https://localhost:18081/queryList')
     // axios
-    //   .get("https://106.12.27.117:18081/123")
+    //   .get("https://106.12.27.117:18081/queryList")
       .then(function(response) {
-        console.log('123'+JSON.stringify(response));
-        that.tabs = response.data;
+       console.log(JSON.stringify(response));
+        console.log('queryList'+JSON.stringify(response));
+        if(response.data.success){
+        that.tabs = response.data.result;
+        console.log('tabs最新值'+JSON.stringify(that.tabs));
         that.$forceUpdate();
+        }
       })
       .catch(function(error) {
-        console.log(error);
+        alert(error);
       });
     },
     insert(){
       // alert(this.inputName);
       let that = this;
       axios({
-      url: "https://localhost:18081/456",
-      // url: "https://106.12.27.117:18081/456",
+      url: "https://localhost:18081/insert",
+      // url: "https://106.12.27.117:18081/insert",
       method: "post",
       data: qs.stringify(
         {
@@ -103,10 +107,13 @@ export default {
       )
     })
       .then(function(response) {
-        console.log(JSON.stringify('456'+JSON.stringify(response)));
+        console.log(JSON.stringify('insert'+JSON.stringify(response)));
         // alert('插入成功'+JSON.stringify(response))
         alert('插入成功');
+        if(response.data.success){
         that.getList();
+        }
+ 
       })
       .catch(function(error) {
         console.log(error);
