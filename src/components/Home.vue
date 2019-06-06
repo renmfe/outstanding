@@ -77,9 +77,9 @@ export default {
     getList(){
       console.log('去查卡列表');
       let that = this;
-    // axios.get('https://localhost:18081/queryList')
-    axios
-      .get("https://106.12.27.117:18081/queryList")
+    axios.get('https://localhost:18081/queryList')
+    // axios
+    //   .get("https://106.12.27.117:18081/queryList")
       .then(function(response) {
        console.log(JSON.stringify(response));
         console.log('queryList'+JSON.stringify(response));
@@ -97,8 +97,8 @@ export default {
       // alert(this.inputName);
       let that = this;
       axios({
-      // url: "https://localhost:18081/insert",
-      url: "https://106.12.27.117:18081/insert",
+      url: "https://localhost:18081/insert",
+      // url: "https://106.12.27.117:18081/insert",
       method: "post",
       data: qs.stringify(
         {
